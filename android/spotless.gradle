@@ -1,0 +1,9 @@
+apply plugin: "com.diffplug.spotless"
+spotless {
+    java {
+        target 'src/main/java/com/owgamedetector/*.java', 'src/test/java/com/owgamedetector/*.java', 'src/androidTest/java/com/owgamedetector/*.java'
+        googleJavaFormat('1.15.0').aosp().reflowLongStrings().groupArtifact('com.google.googlejavaformat:google-java-format')
+        formatAnnotations()  // fixes formatting of type annotations, see below
+        licenseHeader '/* (C) $YEAR */' // or licenseHeaderFile
+    }
+}
